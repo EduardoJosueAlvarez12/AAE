@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
 use App\Models\Usuario;
+use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
 {
@@ -36,16 +37,24 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        //insertar los datos del formulario
-        // $datosUsuario = request()->except('_token');
-        //$actorData = request()
-        //UsuarioController::create($datosUsuario);
-        // UsuarioController::create($request->all());
-        $datosUsuario = new Usuario;
-        $datosUsuario->nombre = $request->nombre;
-        $datosUsuario->save();
-        return redirect('/AAE/login');
+        // $datosUsuario = $request->all();
+        // $datosUsuario = $request->except('_token');
+        $validator = \Validator::make($request->all(), [
+            'nombre' => 'required|max:50',
+            'paterno' => 'required|max:30',
+            'materno' => 'required|max:30',
+            'correo' => 'required|unique:usuario,correo|max:191',
+            'contrasenia' => 'required|max:60|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/',      
+        ]);
+
+        if ($validator->fails())
+        {
+            return response()->json(['errors'=>$validator->errors()->all()]);
+        }
+
+        $datosUsuario = $request->all();
+        Usuario::create($datosUsuario);
+        return response()->json(['success'=>'El usuario se registro correctamente']);
     }
 
     /**

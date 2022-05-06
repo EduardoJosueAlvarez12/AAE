@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Usuario extends Model
 {
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'usuario';
+
     use HasFactory;
+    protected $guarded = [];
 }

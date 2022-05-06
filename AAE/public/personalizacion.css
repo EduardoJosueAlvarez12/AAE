@@ -1,0 +1,15 @@
+body {
+    font-family: 'Atkinson Hyperlegible';
+    font-size: 14px;
+}
+
+.btn-primary {
+    background-color: blueviolet;
+    border-color: blueviolet;
+}
+
+.btn-secondary {
+    background-color: #121212;
+    border-color: #121212;
+}
+

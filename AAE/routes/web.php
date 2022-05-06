@@ -19,5 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/AAE/login', [UsuarioController::class, 'inicioDeSesion']);
-// Route::get('/AAE/login', [UsuarioController::class, 'create']);
 Route::post('/AAE/login', [UsuarioController::class, 'store']);
