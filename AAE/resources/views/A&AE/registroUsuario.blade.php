@@ -8,22 +8,16 @@
         <div class="col-sm-6">
             <label for="paterno" class="form-label">Apellido Paterno: </label>
             <input type="text" class="form-control" name="paterno" id="paterno" placeholder="Ejemplo: Hernández">
-            <div class="invalid-feedback">
-                Type in your middle name
-            </div>
         </div>
 
         <div class="col-sm-6">
             <label for="materno" class="form-label">Apellido Materno: </label>
             <input type="text" class="form-control" name="materno" id="materno" placeholder="Example: Vásquez">
-            <div class="invalid-feedback">
-                Type in your last name
-            </div>
         </div>
 
         <div class="col-12">
             <label for="correo" class="form-label">Correo Electronico: </label>
-            <input type="correo" class="form-control" name="correo" id="correo" aria-describedby="emailHelp">
+            <input type="correo" class="form-control" name="correo" id="correo" placeholder="josuehernandez@mined.clases.edu.sv" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-text">Nunca compartiremos tu correo electrónico con nadie más.</div>
         </div>
 
@@ -31,7 +25,7 @@
             <label for="contrasenia" class="form-label">Contraseña: </label>
             <input type="password" name="contrasenia" id="contrasenia" class="form-control" aria-describedby="passwordHelpBlock">
             <div id="passwordHelpBlock" class="form-text">
-                Su contraseña debe tener entre 8 y 60 carácteres, contener al menos una mayúscula, una minúsucula, un número y un carácter especial.
+                Su contraseña debe tener entre 8 y 60 carácteres, contener al menos una mayúscula, una minúsucula, un número y un carácter especial: @$!%*?&.
             </div>
 
         </div>

@@ -43,7 +43,7 @@ class UsuarioController extends Controller
             'nombre' => 'required|max:50',
             'paterno' => 'required|max:30',
             'materno' => 'required|max:30',
-            'correo' => 'required|unique:usuario,correo|max:191',
+            'correo' => 'required|unique:usuario,correo|max:191|regex:/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/',
             'contrasenia' => 'required|max:60|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/',      
         ]);
 
