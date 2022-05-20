@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('materno',30);
             $table->string('email', 191)->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('contrasenia');
+            $table->string('password');
             $table->string('codigo_recuperacion',50)->nullable();
             $table->boolean('activo')->default(false);
             $table->boolean('admin')->default(false);

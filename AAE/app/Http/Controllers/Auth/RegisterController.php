@@ -54,7 +54,7 @@ class RegisterController extends Controller
             'paterno' => 'required|max:30',
             'materno' => 'required|max:30',
             'email' => 'required|unique:users,email|max:191|regex:/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/',
-            'contrasenia' => 'required|max:60|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/',      
+            'password' => 'required|max:60|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/',      
         ]);
     }
 
@@ -71,7 +71,8 @@ class RegisterController extends Controller
             'paterno' => $data['paterno'],
             'materno' => $data['materno'],
             'email' => $data['email'],
-            'contrasenia' => Hash::make($data['contrasenia']),
+            'password' => Hash::make($data['password']),
         ]);
     }
+    
 }

@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use Illuminate\Auth\Events\Validated;
+use Illuminate\Auth\Notifications\VerifyEmail;
+use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -26,5 +29,21 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         //
+        VerifyEmail::toMailUsing(function ($notifiable, $url) {
+
+            return (new MailMessage)
+            
+            ->subject('Correo de confirmación')
+
+            ->greeting('¡Saludos!')
+            
+            ->line('Haga click en el botón de abajo para confirmar su correo en Ask & Answer Education.')
+            
+            ->action('Confirmar correo', $url)
+
+            ->salutation('Saludos, Ask & Answer Education');
+
+
+            });
     }
 }
