@@ -13,3 +13,66 @@ body {
     border-color: #121212;
 }
 
+.flex-container-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#title {
+    padding: 5px;
+}
+
+#login-jumbotron {
+    align-items: center;
+    background-color: #4F14A0;
+    border-radius: 15px;
+    width: 55%;
+    margin: auto;
+    position: absolute;
+    top: 20%;
+    bottom: 20%;
+    left: 20%;
+    right: 20%;
+}
+
+#login-title {
+    padding: 60px;
+}
+
+#login-form {
+    padding: 60px;
+    width: 120%;
+
+}
+
+#login-button {
+    border-radius: 40px;
+    background-color: #4F14A0;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+    border-width: 2px;
+}
+
+#arrow-button {
+    color: #FFFFFF;
+    font-size: 30px;
+    padding: 5px;
+}
+
+#login-control {
+    padding: 10px;
+}
+
+#login-button {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
