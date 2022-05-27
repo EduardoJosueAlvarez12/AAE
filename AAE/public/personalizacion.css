@@ -1,6 +1,7 @@
 body {
     font-family: 'Atkinson Hyperlegible';
     font-size: 14px;
+    background-color: #FFFFF0;
 }
 
 .btn-primary {
@@ -43,14 +44,41 @@ body {
     right: 20%;
 }
 
+#register-jumbotron {
+    background-color: #4F14A0;
+    border-radius: 15px;
+    width: 60%;
+    position: absolute; /* Lo pone en el centro*/
+    top: 20%;
+    bottom: 5%;
+    left: 20%;
+    right: 20%;
+}
+
 #login-title {
     padding: 60px;
+}
+
+#register-title {
+    padding-top: 50%;
+    padding-left: 50px;
+    padding-right: 50%;
+    width: 120%;
+}
+
+#register-body {
+    padding: 20px;
+    padding-bottom: 0%;
+    width: 50%;
 }
 
 #login-form {
     padding: 60px;
     width: 120%;
+}
 
+#register-line {
+    padding-top: 10%;
 }
 
 #login-button {
@@ -68,6 +96,10 @@ body {
 }
 
 #login-control {
+    padding: 10px;
+}
+
+#register-control {
     padding: 10px;
 }
 
