@@ -52,4 +52,4 @@ Route::get('/AAE/password/restablecer/{token}','App\Http\Controllers\Auth\ResetP
 Route::post('/AAE/password/restablecer','App\Http\Controllers\Auth\ResetPasswordController@reset')->name('password.update');
 
 //rutas de home
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
+Route::get('/AAE/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
