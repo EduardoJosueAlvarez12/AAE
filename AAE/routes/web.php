@@ -24,6 +24,7 @@ Route::get('/', function () {
 //Route::post('/AAE/register',[App\Http\Controllers\Auth\RegisterController::class,'register'])->name('registro');
 //Route::post('AAE/registro', 'App\Http\Controllers\Auth\RegisterController@register');
 
+//rutas de registro
 Route::get('/AAE/registro', [
     'as' => 'register',
     'uses' => 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm'
@@ -33,19 +34,22 @@ Route::get('/AAE/registro', [
     'uses' => 'App\Http\Controllers\Auth\RegisterController@register'
   ]);
 
-
-
- //Authentication Routes
+ //Rutas de login
  Route::get('/AAE/login','App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login' ) ;
  Route::post('/AAE/login','App\Http\Controllers\Auth\LoginController@login');
  Route::post('/AAE/logout','App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
 
- //Email Verification Routes...
+ //Rutas de verificación de email
 Route::get('/AAE/email/verify','App\Http\Controllers\Auth\VerificationController@show')->name('verification.notice');
 Route::get('/AAE/email/verify/{id}/{hash}','App\Http\Controllers\Auth\VerificationController@verify')->name('verification.verify');
-Route::get('/AAE/email/resend','App\Http\Controllers\Auth\VerificationController@resend')->name('verification.resend');
+Route::post('/AAE/email/resend','App\Http\Controllers\Auth\VerificationController@resend')->name('verification.resend');
 
+//rutas de reset
+Route::get('/AAE/password/restablecer','App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('/AAE/password/email','App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('/AAE/password/restablecer/{token}','App\Http\Controllers\Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('/AAE/password/restablecer','App\Http\Controllers\Auth\ResetPasswordController@reset')->name('password.update');
 
-
+//rutas de home
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');

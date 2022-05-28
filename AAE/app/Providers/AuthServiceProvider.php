@@ -32,16 +32,16 @@ class AuthServiceProvider extends ServiceProvider
         VerifyEmail::toMailUsing(function ($notifiable, $url) {
 
             return (new MailMessage)
-            
+    
             ->subject('Correo de confirmación')
 
             ->greeting('¡Saludos!')
             
-            ->line('Haga click en el botón de abajo para confirmar su correo en Ask & Answer Education.')
+            ->line('Haga clic en el botón de abajo para confirmar su correo en Ask & Answer Education.')
             
             ->action('Confirmar correo', $url)
 
-            ->salutation('Saludos, Ask & Answer Education');
+            ->salutation('Atentamente, Ask & Answer Education');
 
 
             });
