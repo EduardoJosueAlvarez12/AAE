@@ -49,8 +49,8 @@ body {
     border-radius: 15px;
     width: 60%;
     position: absolute; /* Lo pone en el centro*/
-    top: 20%;
-    bottom: 5%;
+    top: 12%;
+    bottom: 6%;
     left: 20%;
     right: 20%;
 }
@@ -69,7 +69,7 @@ body {
 #register-body {
     padding: 20px;
     padding-bottom: 0%;
-    width: 50%;
+    width: 60%;
 }
 
 #login-form {
